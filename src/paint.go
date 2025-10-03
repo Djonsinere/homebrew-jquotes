@@ -2,6 +2,7 @@ package src
 
 import (
 	"fmt"
+	"log"
 	"strings"
 	"syscall"
 	"unsafe"
@@ -12,13 +13,22 @@ type window struct {
 	Col uint16
 }
 
+func check_err(err error) {
+	log.Print("[paint]: ", err)
+}
+
 func Print_square(len_x int, quote Quote) error {
-	fmt.Printf("+%s+\n", strings.Repeat("-", len_x))
-	//padding := (len_x - len(quote.Quote_english)) / 2
+	terminal_size, err := terminalWindowSize()
+	if err != nil {
+		check_err(err)
+	}
+
+	fmt.Printf("+%s+\n", strings.Repeat("-", int(terminal_size.Col)-2))
+
 	fmt.Printf("| %13s", quote.Quote_japanese)
 	fmt.Printf("|\n|\n| %13s |\n", quote.Quote_english)
 
-	fmt.Printf("+%s+\n", strings.Repeat("-", len_x))
+	fmt.Printf("+%s+\n", strings.Repeat("-", int(terminal_size.Col)-2))
 
 	return nil
 }
