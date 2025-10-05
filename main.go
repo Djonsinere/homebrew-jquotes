@@ -12,7 +12,7 @@ func check_err(err error) {
 
 func main() {
 
-	now_quote, err := src.Quote_rotation()
+	now_quote, err := src.Random_rotation()
 	if err != nil {
 		check_err(err)
 	}

@@ -40,7 +40,15 @@ func centerText(text string, width int) string {
 
 	// Определяем, сколько пробелов нужно добавить
 	padding := (width - textWidth) / 2
-	return fmt.Sprintf("%s%s%s", strings.Repeat(" ", padding), text, strings.Repeat(" ", width-textWidth-padding))
+	if padding < 0 {
+		padding = 0 // Устанавливаем padding в 0, если он отрицательный
+	}
+	rightPadding := width - textWidth - padding
+	if rightPadding < 0 {
+		rightPadding = 0 // Устанавливаем rightPadding в 0, если он отрицательный
+	}
+
+	return fmt.Sprintf("%s%s%s", strings.Repeat(" ", padding), text, strings.Repeat(" ", rightPadding))
 }
 
 func Print_square(quote Quote) error {
@@ -50,6 +58,9 @@ func Print_square(quote Quote) error {
 	}
 
 	width := int(terminal_size.Col) - 2
+	if width <= 0 {
+		width = 0
+	}
 
 	fmt.Printf("+%s+\n", strings.Repeat("-", width))
 
