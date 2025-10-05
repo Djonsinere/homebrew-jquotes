@@ -1,7 +1,7 @@
 class JapaneseQuotes < Formula
   desc "Display random Japanese quotes in your terminal"
   homepage "https://github.com/Djonsinere/japanese-quotes"
-  url "https://github.com/Djonsinere/japanese-quotes/archive/refs/tags/v1.0.0.tar.gz"
+  url "https://github.com/Djonsinere/homebrew-jquotes/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "ce2132f1fc2937390249500bd9678d04d30a0a127bf84a4761617cc5e9a9b09a"
   license "MIT"
 
