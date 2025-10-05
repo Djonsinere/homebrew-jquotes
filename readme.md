@@ -6,7 +6,6 @@ This project contains a collection of English quotes and their Japanese equivale
 
 ## HomeBrew
 
-comming soon
 ```
 brew tap Djonsinere/jquotes
 brew install japanese-quotes
