@@ -5,8 +5,12 @@ A small Go command-line utility that prints a random inspirational quote in Japa
 This project contains a collection of English quotes and their Japanese equivalents. The program selects a random quote and prints it centered inside a bordered box, using ANSI color escapes for nicer terminal presentation.
 
 ## HomeBrew
-comming soon
 
+comming soon
+```
+brew tap Djonsinere/jquotes
+brew install japanese-quotes
+```
 
 
 Files of interest
